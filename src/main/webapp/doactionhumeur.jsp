@@ -7,7 +7,7 @@
 <%@page import="org.json.JSONObject"%>
 <%@page import="functions.JsonReader"%>
 <%
-JSONObject jsn = JsonReader.readJsonFromUrl("https://quiet-fjord-74456.herokuapp.com/getavatarbynom.jsp?nom="+session.getAttribute("minibroref"));
+JSONObject jsn = JsonReader.readJsonFromUrl("http://localhost:8084/minibrotest1/getavatarbynom.jsp?nom="+session.getAttribute("minibroref"));
 double rng= Math.random();
 int humeur=(int)jsn.get("Humeur");
 
@@ -18,10 +18,10 @@ else{
     int pa = (int)jsn.get("Pa") -1;
 if(rng>=0.5){
     humeur=humeur - 5;
-    response.sendRedirect("https://quiet-fjord-74456.herokuapp.com/updateAvatarH.jsp?nom="+session.getAttribute("minibroref")+"&humeur="+humeur+"&pa="+pa+"&web=1");
+    response.sendRedirect("http://localhost:8084/minibrotest1/updateAvatarH.jsp?nom="+session.getAttribute("minibroref")+"&humeur="+humeur+"&pa="+pa+"&web=1");
 }
 else{
     humeur=humeur + 5;
-    response.sendRedirect("https://quiet-fjord-74456.herokuapp.com/updateAvatarH.jsp?nom="+session.getAttribute("minibroref")+"&humeur="+humeur+"&pa="+pa+"&web=1");
+    response.sendRedirect("http://localhost:8084/minibrotest1/updateAvatarH.jsp?nom="+session.getAttribute("minibroref")+"&humeur="+humeur+"&pa="+pa+"&web=1");
 }}
 %>

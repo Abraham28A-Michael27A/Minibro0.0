@@ -5,7 +5,7 @@
 if(session.getAttribute("userref")==null||session.getAttribute("minibroref")==null){
     response.sendRedirect("index.jsp");
     }
-JSONObject jsn = JsonReader.readJsonFromUrl("https://quiet-fjord-74456.herokuapp.com/getavatarbynom.jsp?nom="+session.getAttribute("minibroref"));
+JSONObject jsn = JsonReader.readJsonFromUrl("http://localhost:8084/minibrotest1/getavatarbynom.jsp?nom="+session.getAttribute("minibroref"));
 String img="happy";
 double score = Double.parseDouble(String.valueOf(jsn.get("Humeur")))+Double.parseDouble(String.valueOf(jsn.get("Attention")));
 if(score>=100){
@@ -28,11 +28,11 @@ author:Aldramech Micmic
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Remplacer la ligne du dessus par celle-ci pour dï¿½sativer le zoom -->
+        <!-- Remplacer la ligne du dessus par celle-ci pour désativer le zoom -->
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <!-- Permet d\'afficher un icï¿½ne dans la base d\'adresse -->
+        <!-- Permet d\'afficher un icône dans la base d\'adresse -->
         <!-- <link rel="shortcut icon" href="image/favicon.png"> -->
         <!-- css Bootstrap -->
         <link href="css/style.css" rel="stylesheet">
@@ -40,7 +40,7 @@ author:Aldramech Micmic
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-        <!-- HTML5 Shim et Respond.js permet ï¿½ IE8 de supporter les ï¿½lï¿½ments du HTML5 -->
+        <!-- HTML5 Shim et Respond.js permet à IE8 de supporter les éléments du HTML5 -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

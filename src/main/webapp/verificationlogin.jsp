@@ -11,7 +11,7 @@
 <%
     String p = request.getParameter("pseudo");
     String m = request.getParameter("mdp");
-    JSONObject jsn= JsonReader.readJsonFromUrl("https://quiet-fjord-74456.herokuapp.com/getuserconnex.jsp?pseudo="+p+"&mdp="+m);
+    JSONObject jsn= JsonReader.readJsonFromUrl("http://localhost:8084/minibrotest1/getuserconnex.jsp?pseudo="+p+"&mdp="+m);
     if(jsn.isNull("Pseudo") && jsn.isNull("Motdepasse")){
         response.sendRedirect("index.jsp?err=1");
     }

@@ -16,8 +16,8 @@
     String mdp=request.getParameter("mdp");
     String q1=request.getParameter("q1");
     String r1=request.getParameter("r1");
-    JSONArray jsn= JsonReader.readJsonArrayFromUrl("https://quiet-fjord-74456.herokuapp.com/getuserbymail.jsp?mail="+mail);
-    JSONArray jsn1= JsonReader.readJsonArrayFromUrl("https://quiet-fjord-74456.herokuapp.com/getuserbypseudo.jsp?pseudo="+pseudo);
+    JSONArray jsn= JsonReader.readJsonArrayFromUrl("http://localhost:8084/minibrotest1/getuserbymail.jsp?mail="+mail);
+    JSONArray jsn1= JsonReader.readJsonArrayFromUrl("http://localhost:8084/minibrotest1/getuserbypseudo.jsp?pseudo="+pseudo);
     if(jsn.length()>0 && jsn1.length()==0){
         response.sendRedirect("inscription.jsp?mail=mail");
     }
@@ -28,7 +28,7 @@
         response.sendRedirect("inscription.jsp?all=all"); 
     }
     else{
-        String url ="https://quiet-fjord-74456.herokuapp.com/insertuser.jsp?nom=%s&prenom=%s&mail=%s&pseudo=%s&mdp=%s&q1=%s&r1=%s";
+        String url ="http://localhost:8084/minibrotest1/insertuser.jsp?nom=%s&prenom=%s&mail=%s&pseudo=%s&mdp=%s&q1=%s&r1=%s";
         url = String.format(url,nom,prenom,mail,pseudo,mdp,q1,r1);
         response.sendRedirect(url);
     }
