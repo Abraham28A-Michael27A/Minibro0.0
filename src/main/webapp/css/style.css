@@ -68,6 +68,11 @@ and open the template in the editor.
 .maincontent{
     padding-bottom: 5%;
 }
+.mycontent{
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-bottom: 5%;
+}
 
 .footer{
     height:10%;
@@ -80,4 +85,8 @@ and open the template in the editor.
     text-align: right;
     color: whitesmoke;
     padding-right: 10%;
+}
+.choix{
+    background-color: #f5f5f5;
+    border-radius: 10px;
 }

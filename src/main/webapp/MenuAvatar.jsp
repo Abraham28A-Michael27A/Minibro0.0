@@ -39,7 +39,7 @@ author:Aldramech Micmic
     <div class="maincontent container">       
         <div class="row"><div class="titre"><img src="img/minibro.png" /></div></div>        
         <div class="row-fluid">
-            <div class="accountsettings"> <h2>Hello, <% out.print(session.getAttribute("userref")); %></h2> </div>
+            <div class="accountsettings"> <h2>Hello, <span style="color: #0480be;"><% out.print(session.getAttribute("userref")); %></span></h2> </div>
             <div class="choixavatar">
                 <h2>Choose the MiniBro to use:</h2>
             <div ><hr>
@@ -61,7 +61,9 @@ author:Aldramech Micmic
                     <a href="connecttoavatar.jsp?n=<%=jsn.getJSONObject(i).get("Nom")%>">
                             <div class="col-lg-4"><img width="100px" src="img/<%=img+jsn.getJSONObject(i).get("Img")%>.png" /></div>
                         <div class="col-lg-4">
-                            <div><span class="dur">Nom:</span><%=jsn.getJSONObject(i).get("Nom")%></div>
+                            <div><span class="dur">Name:</span><%=jsn.getJSONObject(i).get("Nom")%></div>
+                            <div><span class="dur">Taste:</span><%=jsn.getJSONObject(i).get("Gout")%></div>
+                            <div><span class="dur">Caracter:</span><%=jsn.getJSONObject(i).get("Caractere")%></div>
                         </div>
                         <div class="col-lg-4">
                             <div><span class="dur">Humeur:</span><%=jsn.getJSONObject(i).get("Humeur")%></div>                        
@@ -69,7 +71,7 @@ author:Aldramech Micmic
                         </div>
                         <div class="col-lg-4">
                             <div><span class="dur">PA:</span><%=jsn.getJSONObject(i).get("Pa")%></div>   
-                            <span class="dur">score:</span><%=score%>
+                            <span class="dur">Score:</span><%=score%>
                         </div>
                         <div class="col-lg-4">
                             <a style="font-size:14px; color:red;" alt="Delete" href="deleteavatar.jsp?n=<%=jsn.getJSONObject(i).get("Nom")%>">Delete avatar</a>

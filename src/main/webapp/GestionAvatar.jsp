@@ -6,6 +6,8 @@ if(session.getAttribute("userref")==null||session.getAttribute("minibroref")==nu
     response.sendRedirect("index.jsp");
     }
 JSONObject jsn = JsonReader.readJsonFromUrl("https://quiet-fjord-74456.herokuapp.com/getavatarbynom.jsp?nom="+session.getAttribute("minibroref"));
+JSONArray jsn2= JsonReader.readJsonArrayFromUrl("https://quiet-fjord-74456.herokuapp.com/getactiviteccaract.jsp?caractere="+String.valueOf(jsn.get("Caractere")));
+JSONArray jsn3= JsonReader.readJsonArrayFromUrl("https://quiet-fjord-74456.herokuapp.com/getactiviteggout.jsp?gout="+String.valueOf(jsn.get("Gout")));
 String img="happy";
 double score = Double.parseDouble(String.valueOf(jsn.get("Humeur")))+Double.parseDouble(String.valueOf(jsn.get("Attention")));
 if(score>=100){
@@ -57,38 +59,32 @@ author:Aldramech Micmic
                 <strong>Not enough Action Points!</strong>
             </div>
             <% }%>
-            <div class="pda"><img style="width:200px" src="img/<%=img+jsn.get("Img")%>.png" alt="image du minibro" /><div><h3><%=jsn.get("Nom")%></h3></div></div>
+            <div class="pda"><img style="width:200px" src="img/<%=img+jsn.get("Img")%>.png" alt="image du minibro" /><div class="col-md-offset-2"><h3><%=jsn.get("Nom")%></h3></div></div>
             
             <div class="col-lg-4 col-lg-offset-1">
-                <table class="table table-hover">                     
+                <table class="table choix table-hover">                     
                     <tr>
                         <th>Humeur</th>
                     </tr>
+                    <% for(int i=0;i<jsn3.length();i++){%>
                     <tr>
-                        <td><a href="doactionhumeur.jsp?a=1">Go out</a></td><td><a href="doactionhumeur.jsp?a=4">Listen to Music</a></td>
+                        <td><a href="doactionhumeur.jsp?a=1"><%=jsn3.getJSONObject(i).get("Description")%></a></td>
                     </tr>
-                    <tr>
-                        <td><a href="doactionhumeur.jsp?a=2">Play</a></td><td><a href="doactionhumeur.jsp?a=5">Call a friend</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="doactionhumeur.jsp?a=3">Go to a Party</a></td><td><a href="doactionhumeur.jsp?a=6">Read a book</a></td>                        
-                    </tr>
+                    <% } %>
+                    
                 </table>
             </div>
             <div class="col-lg-4 col-lg-offset-1">
-                <table class="table table-hover">                     
+                <table class="table choix table-hover">                     
                     <tr>
                         <th>Attention</th>
                     </tr>
+                    <% for(int i=0;i<jsn2.length();i++){%>
                     <tr>
-                        <td><a href="doactionattention.jsp?a=1">Eat</a></td><td><a href="doactionattention.jsp?a=4">Do Sport</a></td>
+                        <td><a href="doactionattention.jsp?a=1"><%=jsn2.getJSONObject(i).get("Description")%></a></td>
                     </tr>
-                    <tr>
-                        <td><a href="doactionattention.jsp?a=2">Sleep</a></td><td><a href="doactionattention.jsp?a=5">Change clothes</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="doactionattention.jsp?a=3">Take a shower</a></td><td><a href="doactionattention.jsp?a=6">Do chores</a></td>                        
-                    </tr>
+                    <% } %>
+                   
                 </table>
             </div>
             <div class="statsbar">
