@@ -19,11 +19,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Remplacer la ligne du dessus par celle-ci pour d�sativer le zoom -->
+        <!-- Remplacer la ligne du dessus par celle-ci pour désativer le zoom -->
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <!-- Permet d\'afficher un ic�ne dans la base d\'adresse -->
+        <!-- Permet d\'afficher un icône dans la base d\'adresse -->
         <!-- <link rel="shortcut icon" href="image/favicon.png"> -->
         <!-- css Bootstrap -->
         <link href="css/style.css" rel="stylesheet">
@@ -31,7 +31,7 @@
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-        <!-- HTML5 Shim et Respond.js permet � IE8 de supporter les �l�ments du HTML5 -->
+        <!-- HTML5 Shim et Respond.js permet à IE8 de supporter les éléments du HTML5 -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -39,7 +39,7 @@
     </head>
     <body class="background">
         <div class="titre"><img src="img/minibro.png" /></div>
-        <div class="row container mycontent" style="background-color:#b1b1e9;" >
+        <div class="container mycontent" style="background-color:#b1b1e9;" >
             <h1>Create your Minibro:</h1>
             <% if(request.getParameter("err")!=null){%>
             <div class="alert alert-danger">
@@ -79,13 +79,13 @@
                             <input type="hidden" name="pa" value="10"/>
                         </div>
                         <div class="col-lg-4 col-lg-offset-2" style="float:left;">
-                                        Homme<input  type="radio" value="1" checked="true" name="img"/><br>
+                                        <h4>Homme</h4><input  type="radio" value="1" checked="true" name="img"/><br>
                                         <img style="width:100px;" src="img/superhappy1.png"/>
                                         <img style="width:100px;" src="img/happy1.png"/>
                                         <img style="width:100px;" src="img/angry1.png"/>
                         </div>
                         <div class="col-lg-4" style="float:left;">
-                                        Femme<input type="radio" value="2" name="img"/><br>
+                                        <h4>Femme</h4><input type="radio" value="2" name="img"/><br>
                                         <img style="width:100px;" src="img/superhappy2.png"/>
                                         <img style="width:100px;" src="img/happy2.png"/>
                                         <img style="width:100px;" src="img/angry2.png"/>
