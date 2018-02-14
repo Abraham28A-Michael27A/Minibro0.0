@@ -19,12 +19,12 @@
     Double attention = Double.parseDouble(request.getParameter("attention"));
     Double pa = Double.parseDouble(request.getParameter("pa"));
     Double img = Double.parseDouble(request.getParameter("img"));
-    JSONArray jsn= JsonReader.readJsonArrayFromUrl("http://localhost:8084/minibrotest1/getavatarnom.jsp?nom="+nom);
+    JSONArray jsn= JsonReader.readJsonArrayFromUrl("https://quiet-fjord-74456.herokuapp.com/getavatarnom.jsp?nom="+nom);
     if(jsn.length()>0){
         response.sendRedirect("creerminibro.jsp?err=1");
     }
     else{
-        String url ="http://localhost:8084/minibrotest1/insertavatarfo.jsp?nom=%s&user=%s&gout=%s&caractere=%s&message=%s&requete=%s&humeur=%s&attention=%s&pa=%s&img=%s&web=1";
+        String url ="https://quiet-fjord-74456.herokuapp.com/insertavatarfo.jsp?nom=%s&user=%s&gout=%s&caractere=%s&message=%s&requete=%s&humeur=%s&attention=%s&pa=%s&img=%s&web=1";
          url = String.format(url,nom,user,gout,caractere,message,requete,humeur,attention,pa,img);
         response.sendRedirect(url);
     }
